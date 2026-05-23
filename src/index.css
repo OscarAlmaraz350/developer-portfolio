@@ -9,3 +9,79 @@ body {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.hero {
+  min-height: 100vh;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.hero-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.hero-nav a,
+.hero-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  gap: 48px;
+  align-items: center;
+  flex: 1;
+}
+
+.hero-main h1 {
+  font-size: clamp(48px, 10vw, 140px);
+  line-height: 0.9;
+}
+
+.hero-label {
+  margin-bottom: 16px;
+}
+
+.hero-description {
+  max-width: 520px;
+  margin-top: 24px;
+  font-size: 20px;
+}
+
+.hero-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-photo {
+  height: 320px;
+  border: 1px solid white;
+  display: grid;
+  place-items: center;
+}
+
+.hero-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 24px;
+    gap: 48px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo {
+    height: 240px;
+  }
+}
