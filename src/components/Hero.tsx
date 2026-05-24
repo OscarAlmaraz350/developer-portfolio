@@ -10,7 +10,6 @@ function Hero() {
 
         <div className="hero-content">
           <div className="hero-main">
-            <p className="hero-label">Frontend Developer</p>
             <h1>Oscar Almaraz</h1>
             <p className="hero-description">
               I build responsive web experiences with a creative visual approach.

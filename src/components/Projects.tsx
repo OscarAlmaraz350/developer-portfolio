@@ -1,33 +1,43 @@
+import { useState } from 'react'
+
 const projects = [
   {
-    title: "Art Portfolio",
+    title: 'Art Portfolio',
     description:
-      "Responsive portfolio for showcasing digital artwork with grid layout and modal preview.",
-    stack: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "#",
-    githubUrl: "#",
+      'Responsive portfolio for showcasing digital artwork with grid layout and modal preview.',
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    liveUrl: '#',
+    githubUrl: '#',
   },
   {
-    title: "Frontend Project",
+    title: 'Frontend Project',
     description:
-      "A clean responsive web project focused on layout, structure and usability.",
-    stack: ["React", "TypeScript", "CSS"],
-    liveUrl: "#",
-    githubUrl: "#",
+      'A clean responsive web project focused on layout, structure and usability.',
+    stack: ['React', 'TypeScript', 'CSS'],
+    liveUrl: '#',
+    githubUrl: '#',
   },
   {
-    title: "Web Content Project",
+    title: 'Web Content Project',
     description:
-      "A structured web page concept focused on content organization and responsive design.",
-    stack: ["HTML", "CSS", "Figma"],
-    liveUrl: "#",
-    githubUrl: "#",
+      'A structured web page concept focused on content organization and responsive design.',
+    stack: ['HTML', 'CSS', 'Figma'],
+    liveUrl: '#',
+    githubUrl: '#',
   },
-];
+]
 
 function Projects() {
+  const [activeProject, setActiveProject] = useState<string | null>(null)
+
+  function handleProjectClick(title: string) {
+    setActiveProject((currentProject) =>
+      currentProject === title ? null : title,
+    )
+  }
+
   return (
-    <section id="projects" className="projects">
+    <section id="projects">
       <div className="container projects">
         <div className="projects-header">
           <p className="section-label">Projects</p>
@@ -36,7 +46,15 @@ function Projects() {
 
         <div className="projects-grid">
           {projects.map((project) => (
-            <article className="project-card" key={project.title}>
+            <article
+              className={
+                activeProject === project.title
+                  ? 'project-card is-active'
+                  : 'project-card'
+              }
+              key={project.title}
+              onClick={() => handleProjectClick(project.title)}
+            >
               <div className="project-thumbnail">
                 <span>{project.title}</span>
 
@@ -60,7 +78,7 @@ function Projects() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Projects;
+export default Projects

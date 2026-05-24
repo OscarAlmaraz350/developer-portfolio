@@ -42,7 +42,7 @@ body {
 
 .hero-content {
   display: grid;
-  grid-template-columns: 7fr 3fr;
+  grid-template-columns: minmax(0, 7fr) minmax(280px, 3fr);
   gap: 48px;
   align-items: center;
   flex: 1;
@@ -255,7 +255,8 @@ footer {
     transform 200ms ease;
 }
 
-.project-card:hover .project-overlay {
+.project-card:hover .project-overlay,
+.project-card.is-active .project-overlay {
   opacity: 1;
   transform: translateY(0);
 }
@@ -281,7 +282,12 @@ footer {
   color: white;
   text-decoration: none;
 }
+.project-card {
+  min-height: 420px;
+  cursor: pointer;
+}
 
+/* MOBILE RESPONSIVE*/
 @media (max-width: 900px) {
   .projects-grid {
     grid-template-columns: 1fr;
@@ -297,17 +303,38 @@ footer {
   .container {
     padding-inline: 24px;
   }
-  .hero {
-    padding: 24px;
-    gap: 48px;
+  .hero-inner {
+    padding-block: 24px 48px;
+    gap: 40px;
+  }
+
+  .hero-nav {
+    gap: 16px;
+    flex-wrap: wrap;
   }
 
   .hero-content {
     grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .hero-main h1 {
+    font-size: clamp(56px, 18vw, 96px);
+    line-height: 0.9;
+  }
+
+  .hero-description {
+    font-size: 18px;
+    max-width: 100%;
   }
 
   .hero-photo {
-    height: 240px;
+    height: 260px;
+  }
+
+  .hero-profile {
+    max-width: 420px;
   }
   .about {
     grid-template-columns: 1fr;
