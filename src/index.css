@@ -120,21 +120,24 @@ footer {
 /* ABOUT SECTION*/
 .about {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 48px;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 64px;
   align-items: center;
 }
 
 .about-text h2 {
   max-width: 850px;
-  font-size: clamp(36px, 5vw, 80px);
-  line-height: 1;
+  font-size: clamp(40px, 6vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
 }
 
 .about-text p {
   max-width: 620px;
   margin-top: 24px;
   font-size: 18px;
+  line-height: 1.7;
+  color: #cfcfcf;
 }
 
 .section-label {
@@ -153,7 +156,7 @@ footer {
 
 .about-media {
   min-height: 420px;
-  border: 1px solid white;
+  border: 1px solid #333;
   display: grid;
   place-items: center;
 }
@@ -338,6 +341,16 @@ footer {
   }
   .about {
     grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .about-text h2 {
+    font-size: clamp(40px, 12vw, 64px);
+  }
+
+  .about-text p {
+    font-size: 17px;
   }
 
   .about-media {
