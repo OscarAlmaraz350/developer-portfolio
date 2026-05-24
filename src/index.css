@@ -10,10 +10,20 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.container {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding-inline: 32px;
+}
+
 /* GLOBAL STYLES + HERO*/
 .hero {
   min-height: 100vh;
-  padding: 32px;
+}
+
+.hero-inner {
+  min-height: 100vh;
+  padding-block: 32px;
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -74,7 +84,7 @@ body {
 
 main section {
   min-height: 100vh;
-  padding: 32px;
+  padding-block: 96px;
   border-top: 1px solid #333;
 }
 
@@ -83,6 +93,30 @@ footer {
   border-top: 1px solid #333;
 }
 
+/* NAVBAR */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px 32px;
+  background: #000;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+.nav-link.active {
+  opacity: 0.35;
+}
 /* ABOUT SECTION*/
 .about {
   display: grid;
@@ -167,7 +201,102 @@ footer {
   font-size: 18px;
 }
 
+/* PROJECTS SECTION */
+.projects {
+  display: grid;
+  gap: 64px;
+}
+
+.projects-header h2 {
+  max-width: 900px;
+  font-size: clamp(36px, 5vw, 80px);
+  line-height: 1;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  min-height: 420px;
+}
+
+.project-thumbnail {
+  position: relative;
+  height: 100%;
+  min-height: 420px;
+  border: 1px solid white;
+  padding: 24px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.project-thumbnail > span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 24px;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 24px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-stack span {
+  border: 1px solid #777;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.project-links {
+  display: flex;
+  gap: 16px;
+}
+
+.project-links a {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .project-thumbnail {
+    min-height: 320px;
+  }
+}
+
 @media (max-width: 768px) {
+  .container {
+    padding-inline: 24px;
+  }
   .hero {
     padding: 24px;
     gap: 48px;
