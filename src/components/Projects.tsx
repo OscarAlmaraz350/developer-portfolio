@@ -2,30 +2,30 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: "Art Portfolio",
+    title: 'Art Portfolio',
     description:
-      "Responsive portfolio for showcasing digital artwork with grid layout and modal preview.",
-    stack: ["CSS", "JavaScript", "TypeScript"],
-    liveUrl: "#",
-    githubUrl: "#",
+      'A responsive gallery built to showcase digital artwork, featuring a grid layout, modal preview and clean visual structure.',
+    stack: ['CSS', 'TypeScript', 'JavaScript', 'Responsive Design'],
+    liveUrl: '#',
+    githubUrl: '#',
   },
   {
-    title: "Frontend Portfolio",
+    title: 'Developer Portfolio',
     description:
-      "A clean responsive web project focused on layout, structure and usability.",
-    stack: ["React", "TypeScript", "CSS"],
-    liveUrl: "#",
-    githubUrl: "#",
+      'A minimal frontend portfolio focused on responsive layouts, component structure, dark UI and clean interaction design.',
+    stack: ['React', 'TypeScript', 'CSS', 'GitHub Pages'],
+    liveUrl: '#',
+    githubUrl: '#',
   },
   {
-    title: "Loading next project",
+    title: 'Loading next project',
     description:
-      "Currently building new frontend experiments and responsive interfaces.",
-    stack: ["In Progress"],
-    liveUrl: "#",
-    githubUrl: "#",
+      'Currently building new frontend experiments focused on interfaces, accessibility and responsive web experiences.',
+    stack: ['In Progress'],
+    liveUrl: '#',
+    githubUrl: '#',
   },
-];
+]
 
 function Projects() {
   const [activeProject, setActiveProject] = useState<string | null>(null);
