@@ -65,17 +65,18 @@ button {
 
 .hero-inner {
   min-height: 100vh;
-  padding-block: 32px;
+  padding-block: 32px 48px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 64px;
 }
 
 .hero-nav,
 .hero-links {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   flex-wrap: wrap;
+  margin-top: 8px;
 }
 
 .hero-nav a,
@@ -96,15 +97,17 @@ button {
 
 .hero-content {
   display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(280px, 3fr);
-  gap: 48px;
+  grid-template-columns: minmax(0, 7fr) minmax(320px, 3fr);
+  gap: 72px;
   align-items: center;
   flex: 1;
 }
 
 .hero-main h1 {
-  font-size: clamp(48px, 10vw, 140px);
-  line-height: 0.9;
+  max-width: 7ch;
+  font-size: clamp(56px, 10vw, 148px);
+  line-height: 0.88;
+  letter-spacing: -0.06em;
 }
 
 .hero-label {
@@ -113,17 +116,17 @@ button {
 }
 
 .hero-description {
-  max-width: 520px;
-  margin-top: 24px;
-  font-size: 20px;
-  line-height: 1.5;
+  max-width: 560px;
+  margin-top: 32px;
+  font-size: 21px;
+  line-height: 1.7;
   color: var(--color-soft);
 }
 
 .hero-profile {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .hero-profile p {
@@ -132,8 +135,9 @@ button {
 }
 
 .hero-photo {
-  height: 320px;
+  height: 360px;
   border: 1px solid var(--color-border);
+  background: var(--color-surface);
   display: grid;
   place-items: center;
   color: var(--color-muted);
@@ -513,4 +517,77 @@ main section {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+/*ANIMATIONS*/
+.hero-nav a,
+.hero-links a,
+.footer-links a,
+.project-links a,
+.nav-link {
+  position: relative;
+}
+
+.hero-nav a::after,
+.hero-links a::after,
+.footer-links a::after,
+.project-links a::after,
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-fast);
+}
+
+.hero-nav a:hover::after,
+.hero-links a:hover::after,
+.footer-links a:hover::after,
+.project-links a:hover::after,
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.project-card {
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.skill-items span,
+.project-stack span,
+.cv-link,
+.page-controls button {
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.skill-items span:hover,
+.project-stack span:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--color-soft);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -10,9 +10,12 @@ function Hero() {
 
         <div className="hero-content">
           <div className="hero-main">
+
             <h1>Oscar Almaraz</h1>
+
             <p className="hero-description">
-              I build responsive web experiences with a creative visual approach.
+              Building clean, responsive web interfaces with a strong focus on
+              structure, usability and visual detail.
             </p>
           </div>
 
@@ -20,8 +23,9 @@ function Hero() {
             <div className="hero-photo">Photo</div>
 
             <p>
-              Frontend developer focused on clean interfaces, responsive layouts,
-              and creative digital projects.
+              Frontend developer with a creative background in digital art,
+              design and music. Currently focused on React, TypeScript and
+              responsive web experiences.
             </p>
 
             <div className="hero-links">
@@ -33,7 +37,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
