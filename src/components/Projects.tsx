@@ -2,30 +2,30 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: 'Art Portfolio',
+    title: "Art Portfolio",
     description:
-      'A responsive gallery built to showcase digital artwork, featuring a grid layout, modal preview and clean visual structure.',
-    stack: ['CSS', 'TypeScript', 'JavaScript', 'Responsive Design'],
-    liveUrl: '#',
-    githubUrl: '#',
+      "A responsive gallery built to showcase digital artwork, featuring a grid layout, modal preview and clean visual structure.",
+    stack: ["CSS", "TypeScript", "JavaScript", "Responsive Design"],
+    liveUrl: "#",
+    githubUrl: "#",
   },
   {
-    title: 'Developer Portfolio',
+    title: "Developer Portfolio",
     description:
-      'A minimal frontend portfolio focused on responsive layouts, component structure, dark UI and clean interaction design.',
-    stack: ['React', 'TypeScript', 'CSS', 'GitHub Pages'],
-    liveUrl: '#',
-    githubUrl: '#',
+      "A minimal frontend portfolio focused on responsive layouts, component structure, dark UI and clean interaction design.",
+    stack: ["React", "TypeScript", "CSS", "GitHub Pages"],
+    liveUrl: "#",
+    githubUrl: "#",
   },
   {
-    title: 'Loading next project',
+    title: "Loading next project",
     description:
-      'Currently building new frontend experiments focused on interfaces, accessibility and responsive web experiences.',
-    stack: ['In Progress'],
-    liveUrl: '#',
-    githubUrl: '#',
+      "Currently building new frontend experiments focused on interfaces, accessibility and responsive web experiences.",
+    stack: ["In Progress"],
+    liveUrl: "#",
+    githubUrl: "#",
   },
-]
+];
 
 function Projects() {
   const [activeProject, setActiveProject] = useState<string | null>(null);
@@ -56,6 +56,17 @@ function Projects() {
               onClick={() => handleProjectClick(project.title)}
             >
               <div className="project-thumbnail">
+                <div className="project-mockup" aria-hidden="true">
+                  <div className="mockup-line mockup-line-large"></div>
+                  <div className="mockup-line"></div>
+
+                  <div className="mockup-grid">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+
                 <span>
                   {" "}
                   {project.title}
