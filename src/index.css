@@ -406,6 +406,7 @@ main section {
 /* FOOTER */
 .footer {
   border-top: 1px solid var(--color-border);
+  scroll-snap-align: end;
 }
 
 .footer-inner {

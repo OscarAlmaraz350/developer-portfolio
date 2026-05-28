@@ -14,8 +14,8 @@ const projects = [
     description:
       "A minimal frontend portfolio focused on responsive layouts, component structure, dark UI and clean interaction design.",
     stack: ["React", "TypeScript", "CSS", "GitHub Pages"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://oscaralmaraz350.github.io/developer-portfolio/",
+    githubUrl: "https://github.com/OscarAlmaraz350/developer-portfolio",
   },
   {
     title: "Loading next project",
