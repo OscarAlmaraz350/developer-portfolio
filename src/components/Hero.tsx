@@ -19,7 +19,11 @@ function Hero() {
           </div>
 
           <aside className="hero-profile">
-            <div className="hero-photo">Photo</div>
+            <img
+              src="/developer-portfolio/images/profile.jpg"
+              alt="Oscar Almaraz"
+              className="hero-photo"
+            />
 
             <p>
               Frontend developer with a creative background in digital art,
@@ -36,7 +40,11 @@ function Hero() {
                 GitHub
               </a>
 
-              <a href="https://www.linkedin.com/in/oscar-zainos-almaraz-52649a15a/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.linkedin.com/in/oscar-zainos-almaraz-52649a15a/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 LinkedIn
               </a>
 
