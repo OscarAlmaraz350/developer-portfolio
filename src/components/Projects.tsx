@@ -3,6 +3,7 @@ import { useState } from "react";
 const projects = [
   {
     title: "Art Portfolio",
+    image: "/developer-portfolio/images/art-portfolio.png",
     description:
       "A responsive gallery built to showcase digital artwork, featuring a grid layout, modal preview and clean visual structure.",
     stack: ["CSS", "TypeScript", "JavaScript", "Responsive Design"],
@@ -11,6 +12,7 @@ const projects = [
   },
   {
     title: "Developer Portfolio",
+    image: "/developer-portfolio/images/developer-portfolio.png",
     description:
       "A minimal frontend portfolio focused on responsive layouts, component structure, dark UI and clean interaction design.",
     stack: ["React", "TypeScript", "CSS", "GitHub Pages"],
@@ -19,6 +21,7 @@ const projects = [
   },
   {
     title: "Loading next project",
+    image: null,
     description:
       "Currently building new frontend experiments focused on interfaces, accessibility and responsive web experiences.",
     stack: ["In Progress"],
@@ -56,16 +59,24 @@ function Projects() {
               onClick={() => handleProjectClick(project.title)}
             >
               <div className="project-thumbnail">
-                <div className="project-mockup" aria-hidden="true">
-                  <div className="mockup-line mockup-line-large"></div>
-                  <div className="mockup-line"></div>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image"
+                  />
+                ) : (
+                  <div className="project-mockup">
+                    <div className="mockup-line mockup-line-large"></div>
+                    <div className="mockup-line"></div>
 
-                  <div className="mockup-grid">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div className="mockup-grid">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
                   </div>
-                </div>
+                )}
 
                 <span>
                   {" "}
