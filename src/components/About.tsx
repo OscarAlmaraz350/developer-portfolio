@@ -15,7 +15,12 @@ function About() {
             build websites that are easy to use, responsive and well structured.
           </p>
 
-          <a href="#" className="cv-link">
+          <a
+            href="/developer-portfolio/CV.pdf"
+            className="cv-link"
+            target="_blank"
+            rel="noreferrer"
+          >
             View CV
           </a>
         </div>
